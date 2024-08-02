@@ -1,0 +1,22 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": ".",
+  "main": "test",
+  "type": "module",
+  "scripts": {
+    "test": "echo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/carlosvechi/NodeJS"
+  },
+  "keywords": [
+    "1010"
+  ],
+  "author": "Carlos",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
