@@ -1,20 +1,30 @@
-//Instaciamos o Objeto Date...
-let data = new Date();
+import clc from "cli-color";
+var error = clc.red.bold;
+var warn = clc.yellow;
+var notice = clc.blue;
 
-//Utilizamos a instancia para recuperar a hora e os minutos
-let hora = data.getHours();
-let min = data.getMinutes();
+var msg = clc.xterm(202).bgXterm(236);
 
-let saudacao;
-//definimos a msg de saudação de acordo com a hora do dia
+console.log(msg("Orange text on dark gray background"));
 
-if (hora <= 11){
-    saudacao = "Bom dia!";
-} else if (hora <= 17){
-    saudacao = "Boa tarde!";
-} else {
-    saudacao = "Boa noite!";
-}
+console.log(clc.green("Mensagem verde;"));
+console.log(clc.red("Mensagem vermelha;"));
+console.log(clc.blue("Mensagem azul;"));
+console.log(clc.yellow("Mensagem amarela"));
+console.log(clc.red("red " + clc.blue("blue") + "red"));
+console.log(clc.red("red") + "plain" + clc.blue("blue"));
+console.log(clc.red.bgWhite.underline("Ubderlined red text on white background"));
+console.log(clc.red("Text in red"));
 
-console.log('Olá! ' + saudacao);
-console.log('Agora são ' + hora + ' horas e ' + min + ' minutos.');
+console.log(error("Error!"));
+console.log(warn("Warning"));
+console.log(notice("Notice"));
+
+process.stdout.write(
+    clc.columns([
+        [clc.bold("First name"), clc.bold("Last name"), clc.bold("Age")],
+        ["John", "Doe", 34],
+        ["Martha", "Smith", 20],
+        ["Jan", "Kowalski", 30]
+    ])
+)
