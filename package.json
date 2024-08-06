@@ -1,22 +1,12 @@
 {
-  "name": "package.json",
+  "name": "example-website",
   "version": "1.0.0",
-  "description": ".",
-  "main": "test",
-  "type": "module",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "github.com/carlosvechi/NodeJS"
-  },
-  "keywords": [
-    "1010"
-  ],
-  "author": "Carlos",
-  "license": "ISC",
-  "dependencies": {
-    "moment": "^2.30.1"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
