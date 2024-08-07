@@ -3,6 +3,8 @@ const express = require('express');
 // Instanciando o express e carregando a biblioteca do express dentro do 'const app'
 const app = express();
 
+app.use(express.json());
+
 let games = [
     {title: "Sea of Thieves", studio: "Rare", price: 30},
     {title: "WOW", studio: "Blizzard", price: 120},
@@ -24,3 +26,17 @@ app.listen(3080, () => {
 app.get("/", (req, res) => {
     res.json(games);
 })
+
+// sempre que recebermos ou enviarmos informações, usaremos a rota "POST".
+app.put("/novogame/:index", (req, res) =>{
+    const { index } = req.params;
+
+    // Ele busca do corpo da requisição os parâmetros chamados 'title, studio price'
+    let title = req.body.title;
+    let studio = req.body.studio;
+    let price = req.body.price;
+
+    games[index] = { title, studio, price};
+
+    return res.json(games);
+});
