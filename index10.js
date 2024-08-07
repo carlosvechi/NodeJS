@@ -27,6 +27,22 @@ app.get("/", (req, res) => {
     res.json(games);
 })
 
+app.post("/novogame", (req, res) => {
+    let title = req.body.title;
+    let studio = req.body.studio;
+    let price = req.body.price;
+
+    console.log(title);
+    console.log(studio);
+    console.log(price);
+    // pegamos essas informações e salvarmos dentro do array de games que criamos \/
+    let newGame = { title, studio, price };
+    // esse comando irá mandar essas informações para dentro do array de games
+    games.push(newGame);
+
+    res.send("OK");
+});
+
 // sempre que recebermos ou enviarmos informações, usaremos a rota "POST".
 app.put("/novogame/:index", (req, res) =>{
     const { index } = req.params;
@@ -40,3 +56,14 @@ app.put("/novogame/:index", (req, res) =>{
 
     return res.json(games);
 });
+
+//  o nome index nesse quesito significa que pretendo passar um parâmetro no formato de índice de um arrayok? 
+//Basicamente passando a posição do game no array de games que eu
+//pretendo deletar.
+
+app.delete("/:index", (req, res) =>{
+    const { index } = req.params;
+    games.splice(index, 1); // o método splice() altera o conteúdo de uma lista, adicionando novos elementos enquanto remove elementos antigos
+    return res.json({ message: "O jogo foi deletado"});
+})
+
