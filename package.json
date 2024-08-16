@@ -1,18 +1,19 @@
 {
-  "name": "apirest",
+  "name": "todolistsenai",
   "version": "1.0.0",
-  "main": "inndex.js",
+  "main": "iindex.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node inndex.js",
-    "dev": "nodemon inndex.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dev": "nodemon iindex.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
   }
 }
